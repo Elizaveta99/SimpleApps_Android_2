@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">GuessNumber</string>
+    <string name="behind">Try more</string>
+    <string name="ahead">Try less</string>
+    <string name="hit">Hit</string>
+    <string name="enter_value">Enter value</string>
+    <string name="new_game">New game</string>
+    <string name="play_more">Play more</string>
+    <string name="number">number</string>
+    <string name="try_to_guess">Try to guess</string>
+    <string name="error">Wrong input</string>
+    <string name="empty">Input is empty, enter number in [1, 10]</string>
+    <string name="value_borders">Your number should be in [1, 10]</string>
+    <string name="value_not_int">Your number should be integer</string>
+    <string name="hit_image">Hit image</string>
+    <string name="tries_over">Tries are over</string>
+    <string name="oops">Oops!</string>
+</resources>
