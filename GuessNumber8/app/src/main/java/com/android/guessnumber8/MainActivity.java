@@ -1,6 +1,7 @@
 package com.android.guessnumber8;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GestureDetectorCompat;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -11,6 +12,8 @@ import android.gesture.GestureOverlayView;
 import android.gesture.Prediction;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements GestureOverlayVie
             MainActivity.class.getSimpleName();
 
     private GestureLibrary gLibrary;
+    private GestureDetectorCompat mDetector;
 
     private TextView tvInfo;
     private EditText etInput;
@@ -46,6 +50,8 @@ public class MainActivity extends AppCompatActivity implements GestureOverlayVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mDetector = new GestureDetectorCompat(this, new MyGestListener());
 
         gLibrary =
                 GestureLibraries.fromRawResource(this, R.raw.gestures);
@@ -67,6 +73,28 @@ public class MainActivity extends AppCompatActivity implements GestureOverlayVie
 
         newGame();
     }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event){
+        this.mDetector.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
+    class MyGestListener extends GestureDetector.SimpleOnGestureListener {
+        @Override
+        public
+        boolean onFling(MotionEvent event1, MotionEvent event2,
+                        float velocityX, float velocityY)
+        //void onLongPress(MotionEvent event)
+        {
+            //tvOutput.setText("onLongPress: " + event.toString());
+            Log.e(LOG_TAG, String.format("stop app"));
+            finish();
+            System.exit(0);
+            return true;
+        }
+    }
+
+
 
     public void onGesturePerformed(GestureOverlayView overlay, Gesture
             gesture) {
