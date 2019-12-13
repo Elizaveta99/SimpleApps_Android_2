@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="from_number">From value</string>
+    <string name="to_number"> </string>
+    <string name="button_calc">Calculate</string>
+    <string name="error">Error</string>
+    <string name="wrong_input">Wrong input</string>
+    <string-array name="listOfItemsFrom">
+        <item>square kilometer</item>
+        <item>square meter</item>
+    </string-array>
+    <string-array name="listOfItemsTo">
+        <item>square foot</item>
+        <item>acre</item>
+    </string-array>
+</resources>
